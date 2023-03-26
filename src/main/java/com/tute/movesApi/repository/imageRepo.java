@@ -9,5 +9,5 @@ import java.util.List;
 public interface imageRepo extends JpaRepository<Image,Integer> {
 
 
-    Image findByPath(Integer id);
+    Image findByPath(String s);
 }

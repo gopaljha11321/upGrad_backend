@@ -34,6 +34,10 @@ public class MovieController {
     {
         return service.getImage();
     }
-
-
+    @GetMapping("/getId")
+    public  Integer getId(@RequestParam("title") String title)
+    {
+        Card x=service.getProductByTitle(title);
+        return x.getId();
+    }
 }
