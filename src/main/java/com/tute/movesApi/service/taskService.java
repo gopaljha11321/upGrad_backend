@@ -2,7 +2,10 @@ package com.tute.movesApi.service;
 
 import com.tute.movesApi.card.Card;
 import com.tute.movesApi.card.Image;
+import com.tute.movesApi.card.User;
+import com.tute.movesApi.perameter.login;
 import com.tute.movesApi.repository.imageRepo;
+import com.tute.movesApi.repository.loginRepo;
 import com.tute.movesApi.repository.userRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,18 @@ public class taskService {
     private userRepo repo;
     @Autowired
     private imageRepo repoImg;
+
+    @Autowired
+    private loginRepo repologin;
+
+    public User login(String user)
+    {
+        return repologin.findByEmail(user);
+    }
+    public User register(User req)
+    {
+        return repologin.save(req);
+    }
 
     public Image saveImage(Image img)
     {
