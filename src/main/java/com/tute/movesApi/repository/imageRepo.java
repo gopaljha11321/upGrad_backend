@@ -7,7 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface imageRepo extends JpaRepository<Image,Integer> {
-
-
     Image findByPath(String s);
 }
